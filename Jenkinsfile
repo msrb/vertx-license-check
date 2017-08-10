@@ -32,9 +32,10 @@ def envProd = utils.environmentNamespace('run')
 def stashName = ""
 def deploy = false
 def token = env.RECOMMENDER_API_TOKEN
+echo "${token}"
+
 mavenNode {
   
-  echo "${token}"
   
   checkout scm
   if (utils.isCI()){
