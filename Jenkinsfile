@@ -31,7 +31,11 @@ def envStage = utils.environmentNamespace('stage')
 def envProd = utils.environmentNamespace('run')
 def stashName = ""
 def deploy = false
+def token = System.getenv("RECOMMENDER_API_TOKEN");
 mavenNode {
+  
+  echo "${token}"
+  
   checkout scm
   if (utils.isCI()){
 
